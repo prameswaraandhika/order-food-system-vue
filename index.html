@@ -14,8 +14,11 @@
     <body>
         <main id="app">            
             <section class="items">
-                <h4>{{message}}</h4>
-                <div v-for="product in products" class="product selected">
+                <h4>Select your items</h4>
+                <div v-for="product in products"
+                     class="product"
+                     @click="product.active = !product.active" 
+                     :class="product.active ? 'selected' : ''">
                     <div class="photo">
                         <img :src="product.photo">
                     </div>
